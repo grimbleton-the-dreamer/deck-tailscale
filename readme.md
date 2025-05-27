@@ -35,6 +35,11 @@ recommended to tweak those files directly. The configuration file at
 `/etc/systemd/system/tailscaled.service.d/override.conf` is reset every time this script is run to ensure the path to the binary is correct, but the preexisting file will be backed up in that directory as `override.conf.bak`. If something goes wrong, copy those files somewhere else and re-run the install script to get back to a working state.
 
 ## Common issues
+### Error using tailscale with sudo
+
+Symptom: `sudo:tailscale: command not found`
+
+Resolution: Run `sudo visudo` and append "/opt/tailscale" to the secure_path environment variable.
 
 ### Broken config file
 
